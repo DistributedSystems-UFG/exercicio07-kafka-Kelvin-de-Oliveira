@@ -10,7 +10,7 @@ except:
     print('Usage: python3 consumer_producer.py <topic_in> <topic_out>')
     exit(1)
 
-consumer = KafkaConsumer(bootstrap_servers=[BROKER_ADDR + ':' + BROKER_PORT])
+consumer = KafkaConsumer(bootstrap_servers=[BROKER_ADDR + ':' + BROKER_PORT], auto_offset_reset='earliest')
 consumer.subscribe([topic_in])
 
 
